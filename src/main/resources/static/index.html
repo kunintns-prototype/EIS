@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>로그인</title>
+  <meta charset="utf-8">
+  <style>
+    /* 전체 페이지 스타일 */
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+    }
+
+    /* 로고 이미지 스타일 */
+    .logo {
+      display: block;
+      margin: 0 auto;
+      padding-top: 20px;
+    }
+
+    /* 로그인 폼 스타일 */
+    form {
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin: 0 auto;
+      max-width: 400px;
+      padding: 20px;
+    }
+
+    form label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    form input[type="email"],
+    form input[type="password"] {
+      border: 1px solid #ddd;
+      border-radius: 2px;
+      display: block;
+      font-size: 16px;
+      margin-bottom: 10px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    form input[type="submit"] {
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 2px;
+      color: #ffffff;
+      cursor: pointer;
+      font-size: 16px;
+      margin-top: 10px;
+      padding: 10px;
+      width: 100%;
+    }
+
+    form input[type="submit"]:hover {
+      background-color: #3e8e41;
+    }
+
+    /* 비밀번호 숨기기/보이기 아이콘 스타일 */
+    .show-password {
+      position: absolute;
+      top: 30px;
+      right: 20px;
+      cursor: pointer;
+    }
+
+    .show-password i {
+      font-size: 20px;
+      color: #888;
+    }
+
+    /* 회원가입/비밀번호 찾기 스타일 */
+    .signup-link {
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    .signup-link a {
+      color: #4CAF50;
+      text-decoration: none;
+    }
+
+    .signup-link a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <!-- 로고 이미지 -->
+  <img src="https://dummyimage.com/150x50/000/fff&text=Logo" alt="로고 이미지">
+</div>
+<div>
+  <form>
+    <label for="email">이메일:</label>
+    <br>
+    <input type="email" id="email" name="email" required>
+    <br>
+    <label for="password">비밀번호:</label>
+    <br>
+    <div style="position: relative;">
+      <input type="password" id="password" name="password" required>
+      <!-- 비밀번호 숨기기/보이기 아이콘 -->
+      <span style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);">
+            <i class="fa fa-eye" id="toggle-password" onclick="togglePassword()"></i>
+          </span>
+    </div>
+    <br>
+    <input type="submit" value="로그인">
+  </form>
+  <div>
+    <!-- 회원가입 버튼 -->
+    <a href="#">회원가입</a>
+    <!-- 비밀번호 찾기 -->
+    <a href="#">비밀번호 찾기</a>
+  </div>
+</div>
+<script>
+  function togglePassword() {
+    var password = document.getElementById("password");
+    var icon = document.getElementById("toggle-password");
+    if (password.type === "password") {
+      password.type = "text";
+      icon.className = "fa fa-eye-slash";
+    } else {
+      password.type = "password";
+      icon.className = "fa fa-eye";
+    }
+  }
+</script>
+</body>
+</html>
